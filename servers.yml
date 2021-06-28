@@ -81,10 +81,11 @@ Resources:
           apt-get update -y
           apt-get install unzip awscli -y
           apt-get install apache2 -y
+          apt-get install wget
           systemctl start apache2.service
           rm /var/www/html/index.html
           cd /var/www/html
-          aws s3 cp s3://zubair-clouddevops-1/index.html .
+          echo "it works! Udagram, Udacity" > index.html
       ImageId: !Ref WebServerImageId
       SecurityGroups:
       - Ref: WebServerSecGroup
